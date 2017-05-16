@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+
+    ul {
+        list-style-type: none;
+        display: inline-flex;
+    }
+
+    li {
+        padding: 10px 20px;
+        margin: 0px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        color: #868686;
+
+        &.select , &:hover {
+            background-color: #e76924;
+            color: white;
+        }
+    }
+}
