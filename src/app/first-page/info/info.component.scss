@@ -4,18 +4,39 @@
     .content {
         display: flex;
         justify-content: space-around;
-        width: 100%;
+        // width: 100%;
 
         .table { 
-            width: 100%;
+            // width: 100%;
         
             table {
                 border-collapse: collapse;
                 font-family: Arial;
-                width: 50%;
+                // width: 50%;
 
                 tr, th {
                     border: 1px solid #707070;
+                }
+            }
+        }
+
+        .graph {
+            display: flex;
+
+            .chart-info-legend {
+                ul {
+                    list-style: none;
+
+                    li {
+                        span {
+                            width: 25px;
+                            height: 25px;
+                            position: absolute;
+                            border-radius: 3px;
+                            margin-left: -20px;
+                            margin-top: 2px;
+                        }
+                    }
                 }
             }
         }
