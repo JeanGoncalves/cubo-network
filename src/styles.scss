@@ -8,4 +8,49 @@ body {
     margin: 0 auto;
     padding: 0;
     font-family: "Myriad Pro";
+    color: #394b50;
+}
+
+/* Helpers */
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+
+    .block-title {
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: Arial;
+        padding: 20px 0;
+    }
+    .block-subtitle {
+        padding-bottom: 30px;
+    }
+}
+
+.btn {
+    padding: 16px 33px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border-width: 3px;
+    border-style: solid;
+
+    &.btn-green {
+        background-color: #98bf3c;
+        color: white;
+        border-color: #98bf3c;
+
+        &:hover {
+            color: #98bf3c;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
 }
