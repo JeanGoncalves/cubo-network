@@ -1,0 +1,51 @@
+.contact {
+    background-color: #00b8e1;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 40px;
+
+    .form {
+        display: flex;
+
+        .form-group {
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            
+            .form-item {
+                padding: 15px 30px 15px 35px;
+                border: 0;
+                border-radius: 2px;
+                font-size: 14px;
+            }
+
+            .icon {
+                margin-left: 10px;
+                margin-top: 2px;
+                position: absolute;
+            }
+
+            .btn-form {
+                padding: 12px 40px;
+                font-size: 16px;
+                text-transform: uppercase;
+                border-radius: 2px;
+                border-width: 2px;
+                border-style: solid;
+                background-color: transparent;
+
+                &.btn-blue {
+                    border-color: white;
+                    color: white;
+
+                    &:hover {
+                        background-color: #104285;
+                        border-color: #104285;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+    }
+}
