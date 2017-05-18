@@ -13,28 +13,49 @@
 
     .content {
         padding-left: 50px;
-        padding-top: 40px;
+        padding-top: 51px;
         color: white;
-        width: 36%;
+        width: 40%;
         display: flex;
         flex-direction: column;
+        font-family: Arial;
         
         .header {
             font-size: 30px;
-            font-family: Arial;
             padding: 20px 0;
             text-transform: uppercase;
             font-weight: bold;
         }
         .description {
             .text {
-                font-size: 14px;
+                font-size: 12px;
             }
 
             .graph {
                 display: flex;
                 justify-content: space-between;
                 padding: 20px 0;
+
+                .item {
+                        display: flex;
+                        position: relative;
+                        flex-direction: column;
+                        align-items: center;
+                        color: #404a58;
+
+                        .text {
+                            position: absolute;
+                            top: 26%;
+                            font-size: 30px;
+                        }
+
+                        .description {
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            font-size: 12px;
+                            padding: 10px;
+                        }
+                }
             }
         }
     }
