@@ -41,8 +41,6 @@ export class SliderComponent implements OnInit {
 		}
 		for (i = 0; i < this.mySlide.length; i++) {
 			this.mySlide[i]['style'].display = "none"; 
-		}
-		for (i = 0; i < this.elipse.length; i++) {
 			this.elipse[i].className = this.elipse[i].className.replace(" change", "");
 		}
 		this.mySlide[this.slideIndex - 1]['style'].display = "block";
