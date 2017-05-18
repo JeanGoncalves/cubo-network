@@ -1,5 +1,42 @@
 <div class="slider">
-	<div class="img">
-		<img src="assets/img/slide-img1.png" alt="imagem 1">
+
+	<div class="w3-display-container">
+		<div class="w3-display-container mySlides w3-animate-left">
+			<img src="assets/img/slide-img1.png">
+			<div class="slide-container slide-1">
+				<span class="title">Loren ipsun dolor</span>
+				<span class="text">
+					Aenean ultrices ultricies vulputate. Donec ut pulvinar ipsum. Maecenas tincidunt lorem at enim pharetra hendrerit vivamus.
+				</span>
+			</div>
+		</div>
+
+		<div class="w3-display-container mySlides w3-animate-left">
+			<img src="assets/img/slide-img2.png">
+			<div class="slide-container slide-2">
+				<span class="title">Loren ipsun dolor</span>
+				<span class="text">
+					Aenean ultrices ultricies vulputate. Donec ut pulvinar ipsum. Maecenas tincidunt lorem at enim pharetra hendrerit vivamus.
+				</span>
+				<button class="btn-slide btn-blue">Leia mais</button>
+			</div>
+		</div>
+
+		<div class="w3-display-container mySlides w3-animate-left">
+			<img src="assets/img/slide-img3.png">
+			<div class="slide-container slide-3">
+				<span>AEnc donec ut en</span>
+				<span>tempor accor ol</span>
+				<span>eges yaci</span>
+			</div>
+		</div>
+
+		<button class="w3-button w3-black w3-display-left" (click)="plusDivs(-1)">&#10094;</button>
+		<button class="w3-button w3-black w3-display-right" (click)="plusDivs(1)">&#10095;</button>
+
+		<button class="w3-button demo" (click)="currentDiv(1)">1</button> 
+		<button class="w3-button demo" (click)="currentDiv(2)">2</button> 
+		<button class="w3-button demo" (click)="currentDiv(3)">3</button> 
 	</div>
+	
 </div>
