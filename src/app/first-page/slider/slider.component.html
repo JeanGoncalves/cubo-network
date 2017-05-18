@@ -31,12 +31,14 @@
 			</div>
 		</div>
 
-		<button class="w3-button w3-black w3-display-left" (click)="plusDivs(-1)">&#10094;</button>
-		<button class="w3-button w3-black w3-display-right" (click)="plusDivs(1)">&#10095;</button>
+		<button class="slide-button slide-display-left" (click)="plusDivs(-1)">&#10094;</button>
+		<button class="slide-button slide-display-right" (click)="plusDivs(1)">&#10095;</button>
 
-		<button class="w3-button demo" (click)="currentDiv(1)">1</button> 
-		<button class="w3-button demo" (click)="currentDiv(2)">2</button> 
-		<button class="w3-button demo" (click)="currentDiv(3)">3</button> 
+		<div class="elipse">
+			<button class="btn-elipse" (click)="currentDiv(1)"></button> 
+			<button class="btn-elipse" (click)="currentDiv(2)"></button> 
+			<button class="btn-elipse" (click)="currentDiv(3)"></button> 
+		</div>
 	</div>
 	
 </div>
