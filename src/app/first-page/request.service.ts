@@ -36,9 +36,14 @@ export class RequestService {
 		let url = 'grid-people';
         return this.http.get(this.APIUrl + url, {headers: this.headers})
             .toPromise()
-            .then((response: Response) => response.text())
+            .then((response: Response) => this.getGridChartResponse(response))
             .catch(this.handleError);
 	}
+
+    getGridChartResponse (response: Response) {
+        var str = JSON.stringify(eval("(" + response.text() + ")"));
+        return JSON.parse(str);
+    }
 
     /**
      * Method for any error request

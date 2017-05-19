@@ -5,53 +5,29 @@
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 	</div>
 
-	<div class="content">
-		<div class="table">
+	<div class="flex-content">
+		<div class="table flex-item">
 			<table border="1" width="100%">
 				<thead>
 					<tr>
 						<th></th>
-						<th>Nome</th>
-						<th>Sobrenome</th>
-						<th>Participação</th>
+						<th align="left">Nome</th>
+						<th align="left">Sobrenome</th>
+						<th width="20%">Participação</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Carlos</td>
-						<td>Moura</td>
-						<td>5%</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Carlos</td>
-						<td>Moura</td>
-						<td>5%</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Carlos</td>
-						<td>Moura</td>
-						<td>5%</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Carlos</td>
-						<td>Moura</td>
-						<td>5%</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Carlos</td>
-						<td>Moura</td>
-						<td>5%</td>
+					<tr *ngFor="let gridDetail of gridDetails; let i = index">
+						<td align="center">{{i + 1}}</td>
+						<td>{{gridDetail.name}}</td>
+						<td>{{gridDetail.lastname}}</td>
+						<td align="center">{{gridDetail.participation}}%</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<div class="graph">
-			<canvas id="chart-info" width="300" height="300"></canvas>
+		<div class="graph flex-item">
+			<canvas id="chart-info" width="350" height="350"></canvas>
 			<div id="chart-info-legend" class="chart-info-legend"></div>
 		</div>
 	</div>

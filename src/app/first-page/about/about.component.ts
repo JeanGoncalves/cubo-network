@@ -28,13 +28,6 @@ export class AboutComponent implements OnInit {
 			.then((data: PieChart) => {
 				this.initPieChart(data);
 			});
-
-		this.requestService.getGridPeople()
-			.then((data) => {
-				var str = JSON.stringify(eval("(" + data + ")"));
-				this.gridChart = JSON.parse(str)
-			});
-
 	}
 
 	initPieChart(data: PieChart) {

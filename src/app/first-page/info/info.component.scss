@@ -1,10 +1,32 @@
 .info {
     padding: 0 10%;
 
-    .content {
+    .flex-content {
+        display: -webkit-flex;
         display: flex;
         justify-content: space-around;
-        // width: 100%;
+        width: 100%;
+        align-items: center;
+
+        .flex-item {
+            width: 50%;
+        }
+
+        .table {
+            font-family: Arial;
+            color: #707070;
+
+            table {
+                border-collapse: collapse;
+
+                tr,td, th {
+                    border-color: #707070;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+    /*.content {
 
         .table { 
             // width: 100%;
@@ -40,5 +62,5 @@
                 }
             }
         }
-    }
+    }*/
 }
