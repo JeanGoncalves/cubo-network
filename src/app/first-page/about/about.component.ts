@@ -1,5 +1,9 @@
+import { PieChart } from './../pieChart.model';
 import { Component, OnInit } from '@angular/core';
 import { Chart } from "chart.js";
+
+import { RequestService } from './../request.service';
+import { ChartData } from './../chart.data.model';
 
 @Component({
 	selector: 'app-about',
@@ -8,63 +12,58 @@ import { Chart } from "chart.js";
 })
 export class AboutComponent implements OnInit {
 
-	constructor() { }
+	constructor(
+		private requestService: RequestService
+	) { }
 
-
+	gridChart = {};
+	percentGraph;
+	hourGraph;
+	valueGraph;
+	
 	ngOnInit() {
-		let chart = {
-			percent: document.getElementById('chart-percent'),
-			hour: document.getElementById('chart-hour'),
-			value: document.getElementById('chart-value')
-		}
+		let pieChartData;
 
-		let data = {
-			datasets: [
-				{
-					data: [5, 20],
-					borderWidth: [0,1],
-					borderColor: ['','#fec30c'], 
-					backgroundColor: [
-						"#404a58",
-						"#ffffff"
-					],
-					hoverBackgroundColor: [
-						"#404a58",
-						"#ffffff"
-					]
-				}]
-		};
+		this.requestService.getPieChart()
+			.then((data: PieChart) => {
+				this.initPieChart(data);
+			});
 
+		this.requestService.getGridPeople()
+			.then((data) => {
+				var str = JSON.stringify(eval("(" + data + ")"));
+				this.gridChart = JSON.parse(str)
+			});
+
+	}
+
+	initPieChart(data: PieChart) {
+
+		this.percentGraph = Number(data.percent);
+		this.hourGraph = data.hour;
+		this.valueGraph = Number(data.currency);
+
+		this.createChart(document.getElementById('chart-percent'), this.newDatasets([Number(data.percent), 100]));
+		this.createChart(document.getElementById('chart-hour'), this.newDatasets([Number(data.hour), 16]));
+		this.createChart(document.getElementById('chart-value'), this.newDatasets([Number(data.currency), 1000]));
+	}
+
+	newDatasets(data: Array<Number>) {
+		return new ChartData([0,1],['','#fec30c'],["#404a58","#ffffff"],["#404a58","#ffffff"], data);
+	}
+
+	createChart(ctx, dataset) {
 		let options = {
 			responsive: false,
 			legend: {display: false},
 			tooltips: {enabled: false},
 			cutoutPercentage: 90
 		};
-		
-		new Chart(chart.percent, {
-			type: 'doughnut',
-			data: data,
-			options: options
-		});
 
-		new Chart(chart.hour, {
+		new Chart(ctx, {
 			type: 'doughnut',
-			data: data,
-			options: options
-		});
-
-		new Chart(chart.value, {
-			type: 'doughnut',
-			data: data,
+			data: dataset,
 			options: options
 		});
 	}
-
-	ngAfterContentInit() {
-		//Called after ngOnInit when the component's or directive's content has been initialized.
-		//Add 'implements AfterContentInit' to the class.
-
-	}
-
 }
